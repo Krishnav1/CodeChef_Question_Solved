@@ -1,0 +1,45 @@
+#include <iostream>
+#include<iomanip>
+using namespace std;
+
+int main() 
+{
+	int T = 0;
+    int a;
+    cin >> T;
+    while (T > 0)
+    {
+        cin >> a;
+        if(a <= 250000)
+        {
+            cout << fixed << setprecision(0) << a << endl;
+        }
+        else if(a <= 500000)
+        {
+            cout << fixed << setprecision(0) << a - ((a-250000) * 0.05) << endl;
+        }
+        else if(a <= 750000)
+        {
+            cout << fixed << setprecision(0) << a - ((a-500000) * 0.1 + 12500) << endl;
+        }
+        else if(a <= 1000000)
+        {
+            cout << fixed << setprecision(0) << a - ((a-750000) * 0.15 + 37500) << endl;
+        }
+        else if(a <= 1250000)
+        {
+            cout << fixed << setprecision(0) << a - ((a-1000000) * 0.2 + 75000) << endl;
+        }
+        else if(a <= 1500000)
+        {
+            cout << fixed << setprecision(0) << a - ((a-1250000) * 0.25 + 125000) << endl;
+        }
+        else
+        {
+            cout << fixed << setprecision(0) << a - ((a-1500000) * 0.3 + 187500) << endl;
+        }
+        T--;
+    }
+    
+    return 0;
+}
