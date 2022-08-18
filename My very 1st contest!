@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n,a,b,first,sec;
+    cin>>n>>a>>b;
+    first=n-a;
+    sec=first-b;
+    cout<<first<<" "<<sec;
+	return 0;
+}
