@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+	    int a;
+	    cin >> a;
+	    string s,sf="";
+	    cin >>s;
+	    for (auto c : s) {
+            if(c=='0'){
+                sf = "0" + sf; 
+            }
+            else if (c=='1'){
+                sf = sf + '1';
+            }
+	    }
+	    cout << sf << endl;
+	}       
+	return 0;
+}
