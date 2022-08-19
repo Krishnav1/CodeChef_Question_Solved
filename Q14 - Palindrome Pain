@@ -1,0 +1,118 @@
+#include <iostream>
+#include <bits/stdc++.h>
+#include <string>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t-->0){
+	    int X,Y;
+	    cin>>X>>Y;
+	    if(X%2!=0 && Y%2 !=0 || (X==1 || Y==1))cout<<-1<<endl;
+	    else{
+	        string s1(X+Y,'0'),s2(X+Y,'0');
+	        int acount=X,bcount=Y;
+	        if(X%2 == 0 && Y%2 == 0){
+	            for(int i=0;i<X+Y;i++){
+	                if(acount>0){
+	                    s1[i]='a';
+	                    s1[X+Y-i-1]='a';
+	                    acount-=2;
+	                }
+	                else if(bcount>0){
+	                    s1[i]='b';
+	                    s1[X+Y-i-1]='b';
+	                    bcount-=2;
+	                }
+	            }
+	            acount=X,bcount=Y;
+	            for(int i=0;i<X+Y;i++){
+	                if(bcount>0){
+	                    s2[i]='b';
+	                    s2[X+Y-i-1]='b';
+	                    bcount-=2;
+	                }
+	                else if(acount>0){
+	                    s2[i]='a';
+	                    s2[X+Y-i-1]='a';
+	                    acount-=2;
+	                }
+	            }
+	            
+	        }
+	        else{
+	            if(X%2 != 0){
+	                //s1
+	                for(int i=0;i<X+Y;i++){
+	                    if(bcount>0){
+	                        s1[i]='b';
+	                        s1[X+Y-1-i] = 'b';
+	                        bcount-=2;
+	                    }
+	                    else if(acount>0){
+	                        s1[i]='a';
+	                        s1[X+Y-1-i]='a';
+	                        acount-=2;
+	                    }
+	                }
+	                //s2
+	                acount=X,bcount=Y;
+	                for(int i=0;i<X+Y;i++){
+	                    if(acount>1){
+	                        s2[i]='a';
+	                        s2[X+Y-1-i] = 'a';
+	                        acount-=2;
+	                    }
+	                    else if(bcount>0){
+	                        s2[i]='b';
+	                        s2[X+Y-1-i]='b';
+	                        bcount-=2;
+	                    }
+	                }
+	                int mid = (X+Y)/2;
+	                s2[mid] = 'a';
+	            }
+	            else{
+	                //s1
+	                for(int i=0;i<X+Y;i++){
+	                    if(acount>0){
+	                        s1[i]='a';
+	                        s1[X+Y-1-i] = 'a';
+	                        acount-=2;
+	                    }
+	                    else if(bcount>0){
+	                        s1[i]='b';
+	                        s1[X+Y-1-i]='b';
+	                        bcount-=2;
+	                    }
+	                }
+	                //s2
+	                acount=X,bcount=Y;
+	                for(int i=0;i<X+Y;i++){
+	                    if(bcount>1){
+	                        s2[i]='b';
+	                        s2[X+Y-1-i] = 'b';
+	                        bcount-=2;
+	                    }
+	                    else if(acount>0){
+	                        s2[i]='a';
+	                        s2[X+Y-1-i]='a';
+	                        acount-=2;
+	                    }
+	                }
+	                int mid = (X+Y)/2;
+	                s2[mid] = 'b';
+	            }
+	        }
+	        cout<<s1<<endl;
+	        cout<<s2<<endl;
+	    }
+	       
+	}
+	
+	return 0;
+}
+/*
+s1 = abbbba,s2=bbaabb Even and Evn
+*/
