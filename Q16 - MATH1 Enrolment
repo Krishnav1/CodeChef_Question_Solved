@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+    	int tes,i,r;
+    	long int x1,y1;
+    	cin>>tes;
+    	for(i=0;i<tes;i++)
+    	{
+    	    cin>>x1>>y1;
+    	    if(x1>y1)
+    	    cout<<"0"<<endl;
+    	    else if(x1==y1)
+    	    cout<<"0"<<endl;
+    	    else if(x1<y1)
+    	    {
+    	     r=y1-x1;
+    	    cout<<r<<endl;
+    	    }
+    	}
+    	return 0;
+}
