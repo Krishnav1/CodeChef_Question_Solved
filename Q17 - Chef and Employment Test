@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+#define long long int
+#define pb push_back
+
+
+int main()
+{
+     ios_base::sync_with_stdio(false);
+     cin.tie(NULL);
+     cout.tie(NULL);
+     
+    
+    int tt; cin>>tt;
+    while(tt--)
+    {
+        int n,k; cin>>n>>k;
+        vector<int> v;
+        for(int i=0;i<n;i++)
+        {
+            int x=0; cin>>x; v.pb(x);
+        }
+        int num=n;
+        num+=k;
+        int index= (num-1)/2;
+        
+        sort(v.begin(),v.end());
+        cout<<v[index]<<endl;
+        
+        
+        
+    }
+    return 0;
+}
