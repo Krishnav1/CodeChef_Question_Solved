@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        int arrivals[n];
+        int departures[n];
+        for(int i=0;i<n;i++){
+            cin>>arrivals[i];
+        }
+        for(int i=0;i<n;i++){
+            cin>>departures[i];
+        }
+        int time[1001]={};
+        for(int i=0;i<1001;i++){
+            for(int j=0;j<n;j++){
+                if(i>=arrivals[j] && i<departures[j]){
+                    time[i]++;
+                }
+            }
+        }
+        /*for(int i=0;i<1001;i++){
+            cout<<time[i]<<" ";
+        }*/
+        cout<<endl;
+        sort(time,time+1001);
+        cout<<time[1000]<<endl;
+    }
+}
