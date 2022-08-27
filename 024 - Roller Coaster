@@ -1,0 +1,24 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+int main()
+{
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll a,b;
+        cin>>a>>b;
+        if(a>=b)
+        {
+            cout<<"yes"<<"\n";
+        
+        }
+        else 
+        {
+            cout<<"no"<<"\n";
+            
+        }
+    }
+    return 0;
+}
